@@ -1,0 +1,43 @@
+filters:
+  and:
+    - 'file.inFolder("03 Content/Reels")'
+    - 'file.ext == "md"'
+
+formulas:
+  age_days: '(today() - file.ctime).days.round(0)'
+
+properties:
+  status:
+    displayName: Stage
+  pillar:
+    displayName: Pillar
+  goal:
+    displayName: Goal
+  cta:
+    displayName: CTA
+  formula.age_days:
+    displayName: Age (days)
+
+views:
+  - type: table
+    name: Pipeline
+    order:
+      - file.name
+      - status
+      - pillar
+      - goal
+      - cta
+      - formula.age_days
+    groupBy:
+      property: status
+      direction: ASC
+
+  - type: cards
+    name: Ready to Post
+    filters:
+      and:
+        - 'status == "ready"'
+    order:
+      - file.name
+      - pillar
+      - cta

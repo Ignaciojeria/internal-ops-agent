@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Logs and runtime outputs
+*.log
+05 Analytics/Agent-Runs/
+
+# Local env / secrets (if added later)
+.env
+.env.*
+
+# PowerShell transcript/history artifacts
+*.ps1history

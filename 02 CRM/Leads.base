@@ -1,0 +1,49 @@
+filters:
+  and:
+    - 'file.inFolder("02 CRM/Leads")'
+    - 'file.ext == "md"'
+
+formulas:
+  is_active: 'status != "won" && status != "lost"'
+  overdue: 'if(due, date(due) < today() && status != "won" && status != "lost", false)'
+
+properties:
+  status:
+    displayName: Status
+  source:
+    displayName: Source
+  service:
+    displayName: Service
+  due:
+    displayName: Next Follow-up
+  priority:
+    displayName: Priority
+  formula.overdue:
+    displayName: Overdue
+
+views:
+  - type: table
+    name: Pipeline
+    order:
+      - file.name
+      - status
+      - source
+      - service
+      - due
+      - priority
+      - formula.overdue
+    groupBy:
+      property: status
+      direction: ASC
+
+  - type: table
+    name: Active Only
+    filters:
+      and:
+        - 'status != "won"'
+        - 'status != "lost"'
+    order:
+      - file.name
+      - status
+      - due
+      - priority

@@ -1,0 +1,30 @@
+filters:
+  and:
+    - 'file.inFolder("04 Automations")'
+    - 'file.ext == "md"'
+
+properties:
+  status:
+    displayName: Status
+  category:
+    displayName: Category
+  time_saved_hours_week:
+    displayName: Hours Saved / Week
+  error_reduction_pct:
+    displayName: Error Reduction %
+  linked_reel:
+    displayName: Linked Reel
+
+views:
+  - type: table
+    name: Automation Backlog
+    order:
+      - file.name
+      - status
+      - category
+      - time_saved_hours_week
+      - error_reduction_pct
+      - linked_reel
+    groupBy:
+      property: status
+      direction: ASC
