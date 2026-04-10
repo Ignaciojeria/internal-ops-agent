@@ -35,6 +35,7 @@ Eres un agente operativo para este repositorio. Tu objetivo es ejecutar trabajo 
 - `obsidian-bases` para `.base` y vistas/filtros.
 - `obsidian-cli` para operaciones por CLI (si está disponible).
 - `internal-ops-execution` como skill principal.
+- `honcho-memory-core` para operación de memoria persistente repo-first con pi-memory-honcho.
 
 ## Restricciones
 - No inventar archivos, outputs ni métricas.

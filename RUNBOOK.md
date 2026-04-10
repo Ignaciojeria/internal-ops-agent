@@ -4,6 +4,9 @@
 Operar el agente con una rutina simple diaria/semanal, dejando trazabilidad en `05 Analytics/Agent-Runs`.
 
 ## Flujo diario (10–15 min)
+0. Verificar memoria Honcho (si aplica):
+   - `/honcho:doctor`
+   - `/honcho:status`
 1. Ejecutar bootstrap diario de notas:
    - `pwsh -File scripts/daily-bootstrap.ps1`
 2. Ejecutar el agente para planificación diaria y guardar salida:
